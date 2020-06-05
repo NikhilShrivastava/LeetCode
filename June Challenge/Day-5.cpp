@@ -10,8 +10,8 @@ public:
     }
     
     int pickIndex() {
-        int rand_weight = rand()%v[(v.size()-1)];
-        return upper_bound(v.begin(),v.end(),rand_weight)-v.begin();
+        int a = rand()%v[(v.size()-1)];
+        return upper_bound(v.begin(),v.end(),a)-v.begin();
         
     }
 };
