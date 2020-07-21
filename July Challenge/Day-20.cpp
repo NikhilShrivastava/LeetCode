@@ -1,27 +1,16 @@
-class Solution {
-public:
-    ListNode* removeElements(ListNode* head, int val) {
-        //ListNode* removeElements(ListNode* head, int val) {
-        ListNode* prev = nullptr;
-        ListNode* current = head;
-        ListNode* result = head;
-        
-        while(current) {
-            if(current->val == val) {
-                ListNode* temp = current;
-                if(!prev) {
-                    current = current->next;
-                    result = current;
-                } else {
-                    prev->next = current->next;
-                    current = current->next;
-                }   
-                delete temp;
-            } else {
-                prev = current;
-                current = current->next;
-            }
+ListNode* removeElements(ListNode* head, int val) {
+        while(head!=NULL && head->val==val)
+        {
+            head=head->next;
         }
-        return result;
+        ListNode*temp=head;
+        while(temp!=NULL && temp->next!=NULL)
+        {
+            if(temp->next->val==val)
+            {
+                temp->next=temp->next->next;
+            }
+            else temp=temp->next;
+        }
+        return head;
     }
-};
