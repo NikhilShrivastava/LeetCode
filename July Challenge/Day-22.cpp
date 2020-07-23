@@ -18,5 +18,6 @@ public:
         res[level].push_back(root->val);
         traverse(root->left, res, level+1);
         traverse(root->right, res, level+1);
+   
     }
 };
